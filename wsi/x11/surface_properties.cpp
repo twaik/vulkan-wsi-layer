@@ -291,7 +291,7 @@ PFN_vkVoidFunction surface_properties::get_proc_addr(const char *name)
 
 bool surface_properties::is_surface_extension_enabled(const layer::instance_private_data &instance_data)
 {
-   return instance_data.is_instance_extension_enabled(VK_KHR_XCB_SURFACE_EXTENSION_NAME);
+   return instance_data.is_instance_extension_enabled(VK_KHR_XCB_SURFACE_EXTENSION_NAME) || instance_data.is_instance_extension_enabled(VK_KHR_XLIB_SURFACE_EXTENSION_NAME);
 }
 
 } /* namespace x11 */
