@@ -1,3 +1,39 @@
+# termux status
+
+we are currently working on wine hangover and Project Venusi  it doesn't work yet but it will one day   if the BIONIC mesa suite doesn't work use GNU libc instead  GALLIUM_DRIVER=virpipe  works there it is broken in bionic 
+
+my bionic mesa is so broken that glxgears crashes every where  in swap buffer and every where   you can experiment with all environmental settings 
+
+MESA_LOADER_DRIVER_OVERRIDE=virpipe VN_DEBUG=all GALLIUM_DRIVER=virpipe MESA_GL_VERSION_OVERRIDE=4.1 and it might accidentally work  here is a success story among all fails  an old classic from the 8800 tesla days
+
+~~~
+EPOXY_USE_ANGLE=1 virgl_test_server_android --angle-null
+
+GALLIUM_DRIVER=virpipe MESA_GL_VERSION_OVERRIDE=4.1 LD_LIBRARY_PATH=~/FurMark_arm64/dylibs/ ~/FurMark_arm64/furmark --demo furmark-gl --width 400 --height 400 --print-render-speed
+~~~
+
+ am trying to compile all this for GNU and see how far I can get towards the bionic friver
+
+## vgl launcher
+
+https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/vgl
+
+eztremely useful if you get a black screen just prepend vgl and it works . my mesa card has massive problems with the default zink device everything is broken except a few lucky cases zink Vulkan Mali-G57 Unisoc T606
+
+~~~
+vgl dosbox game
+~~~
+
+another trick is to run the GNU build if there is one because the GNU mesa packet is superior 
+
+## linked drivers
+
+if you can't see anything check if your driver is a symbolic link to a different fokder  if so use this modified libhardware.so in the usual the place my driver is not allowed without this patch because it links to a different folder /vendor/lib64/hw/vulkan.ums9230.so -> ../egl/libGLES_mali.so 
+
+https://github.com/john-peterson/platform_hardware_libhardware/commits/mali
+
+https://github.com/john-peterson/sysvk/commits/mali
+
 # Vulkan® Window System Integration Layer
 
 ## Introduction
